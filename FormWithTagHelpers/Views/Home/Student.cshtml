@@ -1,0 +1,27 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Student";
+}
+
+<form asp-action="Student" asp-controller="home" method="post">
+    <input asp-for="Name" placeholder="Enter Your Name" />
+    <br />
+    <input asp-for="Fathername" placeholder="Enter Your Father Name" />
+    <br />
+    <input asp-for="Class" placeholder="Enter Your Class" />
+    <br />
+    <select asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()">
+    <option value="">Gender</option>
+    </select>
+    <br />
+    <label>
+        Married:
+    </label><br />
+    <input type="radio" value="Yes" asp-for="Married" />
+    <label>Yes</label>
+    <br />
+    <input type="radio" value="No" asp-for="Married" />
+    <label>No</label>
+</form>
+
+
